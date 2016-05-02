@@ -369,7 +369,9 @@ rerun_script_as_root() {
   fi
 
   # Don't know how to run the script. Let the user figure it out.
-  REPORT=no fail "E_CANT_SWITCH_TO_ROOT" "Oops, I couldn't figure out how to switch to root. Please re-run the installer as root."
+  REPORT=no fail "E_CANT_SWITCH_TO_ROOT" "Oops, this script could re-exec itself as root. Reason: \
+it could not detect its own filename. Please download a copy to a file called install.sh and run \
+that as root (e.g. using sudo). You can get a copy from https://install.sandstorm.io/"
 }
 
 assert_on_terminal() {
